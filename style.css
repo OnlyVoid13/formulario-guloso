@@ -1,0 +1,130 @@
+/* Importando uma fonte mais moderna */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Gradiente animado no fundo */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 550px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de flutuação ao passar o mouse no card */
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+}
+
+/* Interação de Foco: Borda colorida e sombra suave */
+input:focus, select:focus {
+    border-color: #23a6d5;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(35, 166, 213, 0.2);
+}
+
+/* Estilização da linha (Idade e Sexo) */
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+.row .input-group {
+    flex: 1;
+}
+
+/* Botão Interativo */
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(45deg, #23a6d5, #23d5ab);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(35, 166, 213, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(35, 166, 213, 0.4);
+}
+
+.btn-enviar:active {
+    transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px;
+    }
+    .row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
